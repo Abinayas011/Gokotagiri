@@ -1,0 +1,1701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Gokotagiri</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <style>
+    body {
+      padding-top: 70px; /* so content is not hidden under navbar */
+    }
+	#myNavbar {
+     color: #222;   /* background for navbar content area */
+}
+#myNavbar .nav > li > a {
+  color: green;             /* change link color */
+  font-weight: bold;
+}
+.horizontal-icons {
+  display: flex;               /* horizontal alignment */
+  justify-content: space-around; /* evenly spaced */
+  align-items: center;          /* vertical alignment */
+  padding: 20px 0;
+  list-style: none;             /* remove bullets */
+  margin: 0;
+}
+
+.horizontal-icons li {
+  text-align: center;           /* center icon + text */
+  flex: 1;                      /* equal width for each item */
+}
+
+.horizontal-icons li a {
+  text-decoration: none;
+  color: #333;
+  display: block;
+}
+
+.horizontal-icons li a img {
+  display: block;
+  margin: 0 auto 5px auto;     /* center image and add space below */
+}
+
+.horizontal-icons li a span {
+  display: block;
+  font-size: 14px;
+}
+.cust-link:hover {
+      background-color: gray;   /* fill background */
+      color: green;                 /* change text color */
+      border-color: black;       /* darker border */
+    }
+	.cust-link {
+      display: inline-block;       /* allows padding and border */
+      padding: 10px 20px;          /* space around text */
+      border: 2px solid white;   /* blue border */
+      border-radius: 5px;          /* rounded corners */
+      color: #337ab7;              /* text color */
+      text-decoration: none;       /* remove underline */
+      transition: all 0.3s ease;   /* smooth hover animation */
+    }
+	/* Wrapper for each experience */
+.li-gktexperience {
+    width: 20%;
+    float: left;
+    padding: 0 5px;
+    box-sizing: border-box;
+    font-family: "Poppins", Arial, sans-serif;
+}
+
+/* Image container */
+.event_img_container img {
+    height: 360px !important;
+    width: 100%;
+    border-radius: 5px;
+    object-fit: cover;
+    display: block;
+}
+
+/* Hover effect on image */
+.img_container img {
+    transition: all 0.4s ease;
+    opacity: 0.85;
+}
+.img_container img:hover {
+    transform: scale(1.05);
+    opacity: 1;
+}
+
+/* Left Ribbon (Trekking) */
+.ribbon {
+    position: absolute;
+    top: 15px;
+    left: -20px;
+    background: #e74c3c;
+    color: #fff;
+    padding: 5px 20px;
+    font-size: 14px;
+    font-weight: bold;
+    transform: rotate(-45deg);
+    z-index: 2;
+}
+
+/* Right Price (999) */
+.price_grid {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: #00a99d;
+    color: #fff;
+    padding: 6px 14px;
+    font-size: 16px;
+    border-radius: 4px;
+    font-weight: bold;
+    z-index: 2;
+}
+
+/* Bottom Ribbon (Mesmerizing Day) */
+.short_info h3 {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.65);
+    color: #fff;
+    font-size: 18px;
+    padding: 8px;
+    text-align: center;
+}
+
+/* Hide <em> text until hover */
+.short_info em {
+    display: none;
+}
+.img_container:hover .short_info em {
+    display: block;
+    position: absolute;
+    bottom: 40px;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #f1f1f1;
+    padding: 6px;
+    font-size: 14px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+/* Responsive font size for h3 inside .li-gktexperience */
+@media (max-width: 767px) {
+    .li-gktexperience .short_info h3 {
+        font-size: 11px;
+    }
+}
+
+.li-gktexperience .short_info h3 {
+    font-size: 16px;
+}
+
+/* General responsive h3 */
+@media (max-width: 767px) {
+    .short_info h3 {
+        font-size: 15px;
+    }
+}
+
+/* Short info container (bottom overlay) */
+.short_info {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: url(//gokotagiri.com/wp-content/themes/gokotagiritourism/assets/img/shadow_tour.png) repeat-x left bottom;
+    width: 100%;
+    padding: 25px 15px 15px 20px;
+    color: #fff;
+    font-size: 13px;
+    transition: all 0.4s ease;
+}
+
+/* Short info title */
+.short_info h3 {
+    font-size: 18px;
+    color: #fff;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+/* Global heading styles */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 500;
+    line-height: 1.1;
+    font-family: inherit;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    color: inherit;
+}
+
+/* Links */
+a {
+    color: #337ab7;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+a:hover {
+    color: #00a99d;
+    text-decoration: underline;
+}
+
+/* Center text helper */
+.text-center {
+    text-align: center;
+}
+
+/* Body styling */
+body {
+    background: #ffffff;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: "Poppins", Arial, sans-serif;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 300;
+}
+
+/* Scrollbar styling (mobile < 768px) */
+@media (max-width: 48em) {
+    ::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #016aa7;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: rgba(11, 11, 11, 0.4);
+        border-radius: 10px;
+    }
+}
+/* Hide description (em/p) by default */
+.short_info p {
+    opacity: 0;
+    display: none;
+    padding-top: 10px;
+    line-height: 1.4;
+    font-weight: 400;
+    margin-bottom: 0;
+}
+
+/* Show description on hover */
+.li-gktexperience:hover .short_info p {
+    opacity: 1;
+    display: block;
+}
+
+/* Short info container (bottom overlay) */
+.short_info {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: url(//gokotagiri.com/wp-content/themes/gokotagiritourism/assets/img/shadow_tour.png) repeat-x left bottom;
+    width: 100%;
+    padding: 25px 15px 15px 20px;
+    color: #fff;
+    font-size: 13px;
+    transition: all 0.4s ease;
+}
+
+/* Text align helper */
+.text-center {
+    text-align: center;
+}
+
+/* Body style */
+body {
+    background: #ffffff;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: "Poppins", Arial, sans-serif;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    font-weight: 300;
+}
+
+/* Links */
+a {
+    color: #337ab7;
+    text-decoration: none;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+a:hover {
+    color: #00a99d;
+    text-decoration: underline;
+}
+
+/* Custom scrollbar (only on small screens) */
+@media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: #016aa7;
+        border-radius: 10px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background-color: rgba(11, 11, 11, 0.4);
+        border-radius: 10px;
+    }
+}
+/* Image wrapper */
+.img_wrapper {
+    background-color: #000;
+    margin: 5px;
+    margin-bottom: 30px;
+    border-radius: 15px;
+    position: relative;
+    transition: 
+        color 0.3s ease-in-out, 
+        background 0.3s ease-in-out, 
+        opacity 0.3s ease-in-out, 
+        box-shadow 0.3s ease-in-out, 
+        transform 0.3s ease-in-out, 
+        border 0.3s ease-in-out;
+}
+
+/* Smooth fonts */
+html, body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global box-sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+/* Centered text utility */
+.text-center {
+    text-align: center;
+}
+
+/* Body styles */
+body {
+    background: #ffffff;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: "Poppins", Arial, sans-serif;
+    color: #333;
+    font-weight: 300;
+}
+
+/* Scrollbar (only on small screens) */
+@media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #016aa7;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: rgba(11, 11, 11, 0.4);
+        border-radius: 10px;
+    }
+}
+/* Global box-sizing & font smoothing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+html, body {
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+}
+
+/* Ribbon container */
+.ribbon {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 75px;
+    height: 75px;
+    overflow: hidden;
+    text-align: right;
+    z-index: 1;
+}
+
+/* Ribbon text */
+.ribbon span {
+    display: block;
+    position: absolute;
+    top: 19px;
+    left: -21px;
+    width: 100px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #484848;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 20px;
+    background: #fff;
+    box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+}
+
+/* Ribbon triangular edges */
+.ribbon span::before,
+.ribbon span::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    border: 3px solid #79A70A;
+    z-index: -1;
+}
+
+.ribbon span::before {
+    left: 0;
+    border-left-color: #79A70A;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-top-color: #79A70A;
+}
+
+.ribbon span::after {
+    right: 0;
+    border-left-color: transparent;
+    border-right-color: #79A70A;
+    border-bottom-color: transparent;
+    border-top-color: #79A70A;
+}
+
+/* Text centering utility */
+.text-center {
+    text-align: center;
+}
+
+/* Custom scrollbars on small screens */
+@media (max-width: 48em) {
+    ::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #016aa7;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: rgba(11, 11, 11, 0.4);
+        border-radius: 10px;
+    }
+}
+/* Global box-sizing & font smoothing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+html, body {
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Ribbon container */
+.ribbon {
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    width: 75px;
+    height: 75px;
+    overflow: hidden;
+    text-align: right;
+    z-index: 1;
+}
+
+/* Ribbon text */
+.ribbon span {
+    display: block;
+    position: absolute;
+    top: 19px;
+    left: -21px;
+    width: 100px;
+    font-size: 10px;
+    font-weight: bold;
+    color: #484848;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 20px;
+    background: #fff;
+    box-shadow: 0 3px 10px -5px rgba(0, 0, 0, 1);
+    transform: rotate(-45deg);
+}
+
+/* Ribbon triangular edges */
+.ribbon span::before,
+.ribbon span::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    border: 3px solid #79A70A;
+    z-index: -1;
+}
+
+.ribbon span::before {
+    left: 0;
+    border-left-color: #79A70A;
+    border-right-color: transparent;
+    border-bottom-color: transparent;
+    border-top-color: #79A70A;
+}
+
+.ribbon span::after {
+    right: 0;
+    border-left-color: transparent;
+    border-right-color: #79A70A;
+    border-bottom-color: transparent;
+    border-top-color: #79A70A;
+}
+
+/* Text centering utility */
+.text-center {
+    text-align: center;
+}
+/* Global box-sizing and font smoothing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+html, body {
+    font-family: "Poppins", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333;
+    background: #fff;
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Center text utility */
+.text-center {
+    text-align: center;
+}
+
+/* Experience list items */
+li.gktexperience {
+    width: 20%;
+    float: left;
+    padding: 0 5px;
+}
+
+/* Clear floats after list */
+ul.gktexperience-list::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    li.gktexperience {
+        width: 50%; /* 2 items per row on smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    li.gktexperience {
+        width: 100%; /* 1 item per row on very small screens */
+        padding: 0;
+    }
+}
+/* Box-sizing and font smoothing for all elements */
+*, *::before, *::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* HTML & body defaults */
+html {
+    font-size: 10px;
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: "Poppins", Arial, sans-serif;
+    font-weight: 300;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Text alignment utility */
+.text-center {
+    text-align: center;
+}
+
+/* Clearfix for floated elements */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Scrollbar customization for small screens */
+@media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #016aa7;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: rgba(11, 11, 11, 0.4);
+        border-radius: 10px;
+    }
+}
+
+/* CSS variables (light version) */
+:root {
+    --swiper-navigation-size: 44px;
+    --swiper-theme-color: #007aff;
+    --wp--preset--font-size--normal: 16px;
+    --wp--preset--font-size--huge: 42px;
+    --wp--preset--color--white: #ffffff;
+    --wp--preset--color--black: #000000;
+}
+
+/* Box-sizing and font smoothing for all elements */
+*, *::before, *::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* HTML defaults */
+html {
+    font-size: 10px;
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Body defaults */
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: "Poppins", Arial, sans-serif;
+    font-weight: 300;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Common HTML5 elements display block */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+/* Wrapper styles */
+.wrapper {
+    position: relative;
+    top: -52px;
+    width: 1200px;
+    margin: auto;
+    padding: 20px 0 5px 0;
+    background-color: transparent;
+    z-index: 99;
+    box-shadow: none;
+    margin-bottom: -45px;
+}
+
+@media (max-width: 991px) {
+    .wrapper {
+        width: 100%;
+        box-shadow: none;
+        top: 0;
+        margin-bottom: 0;
+    }
+}
+
+/* Margin utilities */
+.md-mb-0 {
+    margin-bottom: 0 !important;
+}
+.md-mt-0 {
+    margin-top: 0 !important;
+}
+
+/* Scrollbar styling for small screens */
+@media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #016aa7;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: rgba(11, 11, 11, 0.4);
+        border-radius: 10px;
+    }
+}
+
+/* CSS Variables */
+:root {
+    --swiper-navigation-size: 44px;
+    --swiper-theme-color: #007aff;
+    --wp--preset--font-size--normal: 16px;
+    --wp--preset--font-size--huge: 42px;
+    --wp--preset--color--white: #ffffff;
+    --wp--preset--color--black: #000000;
+}
+<div class="clearfix"></div>
+/* Box-sizing and font smoothing */
+*, *::before, *::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* HTML defaults */
+html {
+    font-size: 10px;
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Body defaults */
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: "Poppins", Arial, sans-serif;
+    font-weight: 300;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Headings reset */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #232323;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Specific h3 styles */
+h3, .h3 {
+    font-size: 24px;
+}
+
+.main_title h3 {
+    font-weight: 300;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+    margin-bottom: 0;
+}
+
+/* Main title wrapper */
+.main_title {
+    text-align: center;
+    margin-bottom: 30px;
+    background: #fff;
+    padding-top: 15px;
+}
+
+/* Scrollbar for small screens */
+@media (max-width: 768px) {
+    ::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #016aa7;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: rgba(11, 11, 11, 0.4);
+        border-radius: 10px;
+    }
+}
+
+/* CSS variables */
+:root {
+    --swiper-navigation-size: 44px;
+    --swiper-theme-color: #007aff;
+
+    --wp--preset--font-size--small: 13px;
+    --wp--preset--font-size--medium: 20px;
+    --wp--preset--font-size--large: 36px;
+    --wp--preset--font-size--x-large: 42px;
+    --wp--preset--font-size--normal: 16px;
+    --wp--preset--font-size--huge: 42px;
+
+    --wp--preset--color--white: #ffffff;
+    --wp--preset--color--black: #000000;
+    --wp--preset--color--cyan-bluish-gray: #abb8c3;
+    --wp--preset--color--pale-pink: #f78da7;
+    --wp--preset--color--vivid-red: #cf2e2e;
+    --wp--preset--color--luminous-vivid-orange: #ff6900;
+    --wp--preset--color--luminous-vivid-amber: #fcb900;
+    --wp--preset--color--light-green-cyan: #7bdcb5;
+    --wp--preset--color--vivid-green-cyan: #00d084;
+    --wp--preset--color--pale-cyan-blue: #8ed1fc;
+    --wp--preset--color--vivid-cyan-blue: #0693e3;
+    --wp--preset--color--vivid-purple: #9b51e0;
+}
+/* Box-sizing & font smoothing */
+*, *::before, *::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* HTML defaults */
+html {
+    font-size: 10px;
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Body defaults */
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: "Poppins", Arial, sans-serif;
+    font-weight: 300;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Headings */
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+    font-family: inherit;
+    font-weight: 500;
+    line-height: 1.1;
+    color: #232323;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h3, .h3 {
+    font-size: 24px;
+}
+
+.main_title h3 {
+    font-weight: 300;
+    letter-spacing: -1px;
+    font-size: 24px;
+    margin-bottom: 0;
+    text-transform: uppercase;
+}
+
+.main_title {
+    text-align: center;
+    margin-bottom: 30px;
+    background: #fff;
+    padding-top: 15px;
+}
+
+/* Colored spans inside headings */
+h2 span, h3 span, h4 span, h5 span, h6 span {
+    color: #ff5a5f; /* Keep only one color; change if needed */
+}
+
+/* Scrollbar for small screens */
+@media (max-width: 48em) {
+    ::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #016aa7;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: rgba(11, 11, 11, 0.4);
+        border-radius: 10px;
+    }
+}
+
+/* CSS Variables */
+:root {
+    --swiper-navigation-size: 44px;
+    --swiper-theme-color: #007aff;
+
+    --wp--preset--font-size--small: 13px;
+    --wp--preset--font-size--medium: 20px;
+    --wp--preset--font-size--large: 36px;
+    --wp--preset--font-size--x-large: 42px;
+    --wp--preset--font-size--normal: 16px;
+    --wp--preset--font-size--huge: 42px;
+
+    --wp--preset--color--white: #ffffff;
+    --wp--preset--color--black: #000000;
+    --wp--preset--color--cyan-bluish-gray: #abb8c3;
+    --wp--preset--color--pale-pink: #f78da7;
+    --wp--preset--color--vivid-red: #cf2e2e;
+    --wp--preset--color--luminous-vivid-orange: #ff6900;
+    --wp--preset--color--luminous-vivid-amber: #fcb900;
+    --wp--preset--color--light-green-cyan: #7bdcb5;
+    --wp--preset--color--vivid-green-cyan: #00d084;
+    --wp--preset--color--pale-cyan-blue: #8ed1fc;
+    --wp--preset--color--vivid-cyan-blue: #0693e3;
+    --wp--preset--color--vivid-purple: #9b51e0;
+}
+/* Box-sizing & font smoothing */
+*, *::before, *::after {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* HTML defaults */
+html {
+    font-size: 10px;
+    font-family: sans-serif;
+    -webkit-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+/* Body defaults */
+body {
+    margin: 0;
+    padding: 0;
+    font-size: 14px;
+    line-height: 1.5;
+    font-family: "Poppins", Arial, sans-serif;
+    font-weight: 300;
+    color: #333;
+    background-color: #fff;
+}
+
+/* Containers */
+.container {
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* Section & HTML5 block elements */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+    display: block;
+}
+
+/* Spacing utility classes */
+.md-pt-0 {
+    padding-top: 0px;
+}
+
+.margin_60 {
+    padding-top: 60px;
+    padding-bottom: 60px;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .margin_60 {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
+
+/* Clearfix helper */
+.clearfix::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+/* Scrollbar for small screens */
+@media (max-width: 48em) {
+    ::-webkit-scrollbar {
+        width: 3px;
+        height: 3px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #016aa7;
+        border-radius: 10px;
+    }
+    ::-webkit-scrollbar-track {
+        background-color: rgba(11, 11, 11, 0.4);
+        border-radius: 10px;
+    }
+}
+
+
+  </style>
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container-fluid">
+
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <img src="https://gokotagiri.com/wp-content/themes/gokotagiritourism/assets/img/gokotagiri-logo.png" alt="Gokotagiri">
+    </div>
+
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li class="active"><a href="#">HOME</a></li>
+        <li><a href="#">TOURISM</a></li>
+        <li><a href="#">BUSES</a></li>
+		<li><a href="#">RENTALS</a></li>
+		<li><a href="#">LOGISTICS</a></li>
+		<li><a href="#">FORM</a></li>
+		<li><a href="#">CONTACT</a></li>
+      </ul>
+    </div>
+
+  </div>
+</nav>
+  <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="3000">
+    <!-- Slides -->
+    <div class="carousel-inner">
+      <div class="item active">
+        
+		<img src="https://gokotagiri.com/wp-content/uploads/2024/07/gokotagiri-landing-page-g-1440x440.png" height="440" width="1440" alt="" class="slider-2309 slide-2623 msDefaultImage" draggable="false">
+      </div>
+      <div class="item">
+        <img src="https://gokotagiri.com/wp-content/uploads/2022/10/gokotagiri-homepage-06-400-1440x440.png" height="440" width="1440" alt="Kotagiri Taxi Packages" class="slider-2309 slide-2633 msDefaultImage" draggable="false">
+      </div>
+      <div class="item">
+        <img src="https://gokotagiri.com/wp-content/uploads/2024/07/gokotagiri-bustour-landing-page-g-1440x440.png" height="440" width="1440" alt="" class="slider-2309 slide-2873 msDefaultImage" draggable="false">
+      </div>
+	  <div class="item">
+        <img src="https://gokotagiri.com/wp-content/uploads/2024/07/gokotagiri-buses-landing-page-g-1440x440.png" height="440" width="1440" alt="" class="slider-2309 slide-2872 msDefaultImage" draggable="false">
+      </div>
+	  <div class="item">
+        <img src="https://gokotagiri.com/wp-content/uploads/2024/07/gokotagiri-cargo-landing-page-g-1440x440.png" height="440" width="1440" alt="" class="slider-2309 slide-2874 msDefaultImage" draggable="false">
+      </div>
+	  <div class="item">
+        <img src="https://gokotagiri.com/wp-content/uploads/2024/07/gokotagiri-strawberry-landing-page-g-1440x440.png" height="440" width="1440" alt="" class="slider-2309 slide-2879 msDefaultImage" draggable="false">
+      </div>
+	  <div class="item">
+        <img src="https://gokotagiri.com/wp-content/uploads/2024/07/gokotagiri-trekking-landing-page-g-1440x440.png" height="440" width="1440" alt="" class="slider-2309 slide-2880 msDefaultImage" draggable="false">
+      </div>
+	  
+    </div>
+	
+     
+	  
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<div class="clearfix"></div>
+<section class="homepage-primary-cat wrapper bg-white">
+  <div class="divider_border"></div>
+  <div class="container-fluid md-lr-0">
+    <div class="col-md-12 md-lr-0 homemaincategory-panel">
+      <ul class="horizontal-icons">
+        <li>
+          <a href="#" class="cust-link">
+            <img decoding="async" src="https://gokotagiri.com/wp-content/uploads/2022/06/gkt-icon-home-experience.png" height="70" width="70" alt="Kotagiri Experiences">
+            <span>Experiences</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="cust-link">
+            <img decoding="async" src="https://gokotagiri.com/wp-content/uploads/2022/07/gkt-icon-home-bustour.png" height="70" width="70" alt="Kotagiri Bus Tour">
+            <span>Bus Tour</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="cust-link">
+            <img decoding="async" src="https://gokotagiri.com/wp-content/uploads/2022/06/gkt-icon-home-rides.png" height="70" width="70" alt="Kotagiri Taxi Services">
+            <span>Taxi</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class= "cust-link">
+            <img decoding="async" src="https://gokotagiri.com/wp-content/uploads/2022/06/gkt-icon-home-buses.png" height="70" width="70" alt="Kotagiri Buses">
+            <span>Buses</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class = "cust-link">
+            <img decoding="async" src="https://gokotagiri.com/wp-content/uploads/2022/06/gkt-icon-home-packages-1.png" height="70" width="70" alt="Kotagiri Tour Packages">
+            <span>Packages</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="cust-link">
+            <img decoding="async" src="https://gokotagiri.com/wp-content/uploads/2022/06/gkt-icon-home-kisok.png" height="70" width="70" alt="Kotagiri Tourist Informations">
+            <span>Kisok</span>
+          </a>
+        </li>
+        <li>
+          <a href="#" class="cust-link">
+            <img decoding="async" src="https://gokotagiri.com/wp-content/uploads/2022/06/gkt-icon-home-cargo.png" height="70" width="70" alt="Kotagiri Parcel Services">
+            <span>Cargo</span>
+          </a>
+        </li>
+        <li>
+          <a href="#"class="cust-link">
+            <img decoding="async" src="https://gokotagiri.com/wp-content/uploads/2022/06/gkt-icon-home-fresh.png" height="70" width="70" alt="GoKotagiri Fresh">
+            <span>Fresh</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</section>
+<div class="container text-center">
+<h3 ><span class="text-success" >One Day Activities In</span> Kotagiri</h3>
+<h4>Treat your team with a retreat by discovering kotagiri in just one day experiences.</h4>
+</div>
+<div class="li-gktexperience">
+  <div class="img_wrapper">
+    <!-- Left ribbon -->
+    <div class="ribbon"><span>Trekking</span></div>
+    
+    <!-- Right price -->
+    <div class="price_grid">999</div>
+    
+    <!-- Image + overlay content -->
+    <div class="img_container event_img_container">
+      <a href="/experience/kotagiri-trek">
+        <img decoding="async" loading="lazy" 
+             src="https://gokotagiri.com/wp-content/uploads/2021/05/gkt-experience-thumb-01.png" 
+             width="800" height="533" class="img-responsive" alt="Kotagiri Trek">
+
+        <!-- Bottom Info -->
+        <div class="short_info">
+          <h3>Mesmerizing Day</h3>
+          <p><em>Ridge Walk, Secret Pond, Sunset…</em></p>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+<div class="li-gktexperience">
+<div class="img_wrapper">
+<div class="ribbon"><span>Trekking</span></div>
+<div class="price_grid">799</div>
+<div class="img_container event_img_container"> <a href="/hadathorai-waterfalls-trek"><img decoding="async" loading="lazy" src="https://gokotagiri.com/wp-content/uploads/2022/07/thumb-hadathorai-waterfalls.png" width="800" height="533" class="img-responsive" alt="Ooty Kotagiri Trek"><p></p>
+<div class="short_info">
+<h3>Hadathorai Falls Trek</h3>
+<p><em>Waterfall Shower, Tea Estate Trek, Farming…</em></p>
+</div>
+</a><p><a href="/hadathorai-waterfalls-trek"></a><a href="/hadathorai-waterfalls-trek">                        </a></p>
+</div>
+</div>
+</div>
+<div class="li-gktexperience">
+<div class="img_wrapper">
+<div class="ribbon"><span>Bus Tour</span></div>
+<div class="price_grid">899</div>
+<div class="img_container event_img_container"> <a href="/ooty-and-coonoor-full-day-sightseeing-tour"><img decoding="async" loading="lazy" src="https://gokotagiri.com/wp-content/uploads/2022/08/gkt-icon-bustour-trip-01.png" width="800" height="533" class="img-responsive" alt="Ooty Coonoor Bus Group Tour"><p></p>
+<div class="short_info">
+<h3>Ooty &amp; Coonoor</h3>
+<p><em>Hassle free sightseeing from Kotagiri</em></p>
+</div>
+</a><p><a href="/ooty-and-coonoor-full-day-sightseeing-tour"></a><a href="/ooty-and-coonoor-full-day-sightseeing-tour">                        </a></p>
+</div>
+</div>
+</div>
+<div class="li-gktexperience">
+<div class="img_wrapper">
+<div class="ribbon"><span>Bus Tour</span></div>
+<div class="price_grid">499</div>
+<div class="img_container event_img_container"> <a href="/bus-tour/kotagiri-bus-tour-sightseeing"><img decoding="async" loading="lazy" src="https://gokotagiri.com/wp-content/uploads/2022/08/gkt-icon-bustour-trip-05.png" width="800" height="533" class="img-responsive" alt="Kotagiri Bus Tour"><p></p>
+<div class="short_info">
+<h3>Exclusive Kotagiri</h3>
+<p><em>Visit Kodanadu, Catherine falls…</em></p>
+</div>
+</a><p><a href="/bus-tour/kotagiri-bus-tour-sightseeing"></a><a href="/bus-tour/kotagiri-bus-tour-sightseeing">                        </a></p>
+</div>
+</div>
+</div>
+<div class="li-gktexperience">
+<div class="img_wrapper">
+<div class="img_container event_img_container"> <a><img decoding="async" loading="lazy" src="https://gokotagiri.com/wp-content/uploads/2020/10/gkt-hourseriding-thumbbanner.png" width="800" height="533" class="img-responsive" alt="Ooty Kotagiri Horse Riding"><p></p>
+<div class="short_info">
+<h3>Horse Riding &amp; Cycling</h3>
+<p><em>On Request</em></p>
+</div>
+</a><p><a></a><a>                        </a></p>
+</div>
+</div>
+</div>
+<div class="clearfix"></div>
+<section class="wrapper md-mb-0 md-mt-0">
+<div class="container-fluid md-lr-0">
+<div class="gktexperience-section text-center md-mt-10">
+<div class="main_title">
+<h3><span>Sightseeing Bus Tour Experiences </span>in Ooty</h3>
+<h4>Our bus tour operates over different routes, with must-see landmarks and attractions across the Nilgiris</h4>
+</div>
+<div class="gktbustour-section">
+<div class="li-gktexperience">
+<div class="img_wrapper">
+<div class="ribbon"><span>Trekking</span></div>
+<div class="price_grid">1499</div>
+<div class="img_container event_img_container"> <a href="/experience/ooty-to-kotagiri-trek"><img decoding="async" loading="lazy" src="https://gokotagiri.com/wp-content/uploads/2021/05/gkt-experience-thumb-02.png" width="800" height="533" class="img-responsive" alt="Ooty Kotagiri Trek"><p></p>
+<div class="short_info">
+<h3>Kotagiri Trek’ Ex. OOTY</h3>
+<p><em>Ooty to Ridge Walk, Secret Pond, Sunset…</em></p>
+</div>
+</a><p><a href="/experience/ooty-to-kotagiri-trek"></a><a href="/experience/ooty-to-kotagiri-trek">                            </a></p>
+</div>
+</div>
+</div>
+<div class="li-gktexperience">
+<div class="img_wrapper">
+<div class="ribbon"><span>Bus Tour</span></div>
+<div class="price_grid">349</div>
+<div class="img_container event_img_container"> <a href="/ooty-bus-tour-sightseeing"><img decoding="async" loading="lazy" src="https://gokotagiri.com/wp-content/uploads/2022/08/gkt-icon-bustour-trip-03.png" width="800" height="533" class="img-responsive" alt="Ooty Bus Tour"><p></p>
+<div class="short_info">
+<h3>Ooty &amp; Coonoor</h3>
+<p><em>Visit major attraction around the town</em></p>
+</div>
+</a><p><a href="/ooty-bus-tour-sightseeing"></a><a href="/ooty-bus-tour-sightseeing">                            </a></p>
+</div>
+</div>
+</div>
+<div class="li-gktexperience">
+<div class="img_wrapper">
+<div class="ribbon"><span>Bus Tour</span></div>
+<div class="price_grid">399</div>
+<div class="img_container event_img_container"><a href="/ooty-pykara-mudhumalai-bus-tour"><img decoding="async" loading="lazy" src="https://gokotagiri.com/wp-content/uploads/2022/08/gkt-icon-bustour-trip-04.png" width="800" height="533" class="img-responsive" alt="Ooty Bus Tour Packages"><p></p>
+<div class="short_info">
+<h3>Pykara &amp; Mudhumalai</h3>
+<p><em>Visit Pykara boating, lake, mudhumalai safari…</em></p>
+</div>
+</a><p><a href="/ooty-pykara-mudhumalai-bus-tour"></a><a href="/ooty-pykara-mudhumalai-bus-tour">                            </a></p>
+</div>
+</div>
+</div>
+<div class="li-gktexperience">
+<div class="img_wrapper">
+<div class="img_container event_img_container"><a><img decoding="async" loading="lazy" src="https://gokotagiri.com/wp-content/uploads/2022/08/gkt-icon-bustour-trip-02.png" width="800" height="533" class="img-responsive" alt="Ooty Bus Tour"><p></p>
+<div class="short_info">
+<h3>Ooty Sightseeing Packages</h3>
+<p><em>Coming Soon…</em></p>
+</div>
+</a><p><a></a><a>                            </a></p>
+</div>
+</div>
+</div>
+<div class="li-gktexperience">
+<div class="img_wrapper">
+<div class="img_container event_img_container"><a href="/taxi"><img decoding="async" loading="lazy" src="https://gokotagiri.com/wp-content/uploads/2022/08/gkt-icon-bustour-trip-06.png" width="800" height="533" class="img-responsive" alt="Kotagiri Sightseeing Tour Packages"><p></p>
+<div class="short_info">
+<h3>Hourly Taxi Services</h3>
+<p><em>Buses, Mini Bus, Innova, Sedan Cars available for private sightseeing tours</em></p>
+</div>
+</a><p><a href="/taxi"></a><a href="/taxi">                            </a></p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<div class="wrapper bg-white md-pt-0 md-mb-0">
+<div class="container-fluid md-lr-0">
+<div class="gktexperience-section text-center md-mt-0 md-mb-0">
+<div class="main_title">
+<h3><span>Camping Experience In</span> Kotagiri</h3>
+<h4>Discover the warm hospitality, rich culinary heritage and proud traditions that make up Kotagiri’s vibrant culture.</h4>
+</div>
+<div class="col-md-12 md-lr-0 homeexpstaysection">
+<div class="col-md-9 col-sm-12 col-xs-12 md-lr-0">
+<div class="img_wrapper">
+<div class="price_grid"><sup>Starts from </sup>2999</div>
+<div class="img_container li-gktexperience-event_img_container"><a href="/experience/36-hours-trek-to-kotagiri-ooty/"><img decoding="async" src="https://gokotagiri.com/wp-content/uploads/2021/11/Copy-of-36-hours.png" class="img-responsive" alt="Kotagiri Tent Trek Camping"><p></p>
+<div class="short_info">
+<h3>Mesmerizing 36 hours</h3>
+<p><!--<em>Discover the warm hospitality, rich culinary heritage and proud traditions that make up Kotagiri's vibrant culture.</em>--></p>
+</div>
+</a><p><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/">                            </a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"></a><a href="/experience/36-hours-trek-to-kotagiri-ooty/"> </a></p>
+</div>
+</div>
+</div>
+<div class="col-md-3 col-sm-12 col-xs-12 md-lr-0 expstayquicklinks">
+<div class="expstayquicklisting">
+<h2>Weekend Departures…</h2>
+<ul>
+<li class="first-child">
+<a href="/36-hours-trek-to-kotagiri-ooty"><i class="fa fa-map-marker" aria-hidden="true"></i> CheckIn Directly <span class="pull-right">2999</span></a></li>
+<li>
+<a href="/kotagiri-trekking-from-bangalore"><i class="fa fa-map-marker" aria-hidden="true"></i> From Bangalore <span class="pull-right">4999</span></a></li>
+<li>
+<a href="/chennai-kotagiri-weekend-trekking"><i class="fa fa-map-marker" aria-hidden="true"></i> From Chennai <span class="pull-right">5799</span></a></li>
+<li class="last-child">
+<a href="/coimbatore-to-kotagiri-trek-packages"><i class="fa fa-map-marker" aria-hidden="true"></i> From Coimbatore <span class="pull-right">4499</span></a></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="wrapper bg-white">
+<div class="container-fluid md-lr-0">
+<div class="gktexperience-section text-center md-mt-30 md-mb-30">
+<div class="main_title">
+<h3><span>GoKotagiri</span> Bus Services</h3>
+<h4>Feel the real luxury experience with our bus services across south India</h4>
+</div>
+<div class="col-md-12 md-lr-0">
+<div class="img_wrapper">
+<div class="img_container li-gktexperience-event_img_container"><a href="/bus"><img decoding="async" src="https://gokotagiri.com/wp-content/uploads/2022/08/gktbusbanner-homeslider.png" class="img-responsive" alt="GoKotagiri Bus"></a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="clearfix"></div>
+<div class="wrapper bg-white">
+<div class="container-fluid md-lr-0">
+<div class="gktexperience-section text-center md-mt-30 md-mb-30">
+<div class="main_title">
+<h3><span>GoKotagiri</span> Cargo &amp; Logistics</h3>
+<h4>Large Scale of Operation With Quality, Reliablity and On Time Over Night Delivery</h4>
+<p></p></div>
+<div class="col-md-12 md-lr-0">
+<div class="img_wrapper">
+<div class="img_container li-gktexperience-event_img_container"><a href="/logistics"><img decoding="async" src="https://gokotagiri.com/wp-content/uploads/2024/07/gokotagiri-cargo-landing-page-g.png" class="img-responsive" alt="GoKotagiri Cargo"></a></div>
+<p></p></div>
+<p></p></div>
+<p></p></div>
+<p></p></div>
+</div>
+<div class="clearfix"></div>
+<div class="wrapper bg-white">
+<div class="container-fluid md-lr-0">
+<div class="gktexperience-section text-center md-mt-30 md-mb-30">
+<div class="main_title">
+<h3><span>GoKotagiri</span> Cargo &amp; Logistics</h3>
+<h4>Large Scale of Operation With Quality, Reliablity and On Time Over Night Delivery</h4>
+<p></p></div>
+<div class="col-md-12 md-lr-0">
+<div class="img_wrapper">
+<div class="img_container li-gktexperience-event_img_container"><a href="/logistics"><img decoding="async" src="https://gokotagiri.com/wp-content/uploads/2024/07/gokotagiri-cargo-landing-page-g.png" class="img-responsive" alt="GoKotagiri Cargo"></a></div>
+<p></p></div>
+<p></p></div>
+<p></p></div>
+<p></p></div>
+</div>
+<div class="clearfix"></div>
+<div class="wrapper bg-white">
+<div class="container-fluid md-lr-0">
+<div class="section-experience-mansory">
+<div class="">
+<div class="relatedquickthumb text-center md-mt-30 md-mb-30">
+<div class="col-md-4 col-sm-12 col-xs-12">
+<div class="mansory-left-section-content">
+<h3><span>GoKotagiri Fresh</span></h3>
+<h4>Discover OOTY’s native shopping</h4>
+</div>
+</div>
+<div class="col-md-8">
+<div class="col-md-4 col-sm-6 col-xs-6 md-lr-0">
+<div class="img_wrapper">
+<div class="img_container event_img_container"><a href="/fresh/ooty-kotagiri-strawberry"><img fetchpriority="high" decoding="async" src="https://gokotagiri.com/wp-content/uploads/2021/05/home-thumb-strawberry.png" width="800" height="533" class="img-responsive" alt="Ooty strawberry farm"></a></div>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 col-xs-6 md-lr-0">
+<div class="img_wrapper">
+<div class="img_container event_img_container"><a><img decoding="async" src="https://gokotagiri.com/wp-content/uploads/2021/05/home-thumb-patisserie.png" width="800" height="533" class="img-responsive" alt="Kotagiri cakes online"></a></div>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 col-xs-6 md-lr-0">
+<div class="img_wrapper">
+<div class="img_container event_img_container"><a><img decoding="async" src="https://gokotagiri.com/wp-content/uploads/2021/05/home-thumb-wildmade.png" width="800" height="533" class="img-responsive" alt="Ooty shopping"></a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="container-fluid md-lr-0">
+<div class="section-experience-mansory">
+<div class="">
+<div class="relatedquickthumb text-center md-mt-30 md-mb-30">
+<div class="col-md-4 col-sm-12 col-xs-12">
+<div class="mansory-left-section-content">
+<h3><span>GoKotagiri Fresh</span></h3>
+<h4>Discover OOTY’s native shopping</h4>
+</div>
+</div>
+<div class="col-md-8">
+<div class="col-md-4 col-sm-6 col-xs-6 md-lr-0">
+<div class="img_wrapper">
+<div class="img_container event_img_container"><a href="/fresh/ooty-kotagiri-strawberry"><img fetchpriority="high" decoding="async" src="https://gokotagiri.com/wp-content/uploads/2021/05/home-thumb-strawberry.png" width="800" height="533" class="img-responsive" alt="Ooty strawberry farm"></a></div>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 col-xs-6 md-lr-0">
+<div class="img_wrapper">
+<div class="img_container event_img_container"><a><img decoding="async" src="https://gokotagiri.com/wp-content/uploads/2021/05/home-thumb-patisserie.png" width="800" height="533" class="img-responsive" alt="Kotagiri cakes online"></a></div>
+</div>
+</div>
+<div class="col-md-4 col-sm-6 col-xs-6 md-lr-0">
+<div class="img_wrapper">
+<div class="img_container event_img_container"><a><img decoding="async" src="https://gokotagiri.com/wp-content/uploads/2021/05/home-thumb-wildmade.png" width="800" height="533" class="img-responsive" alt="Ooty shopping"></a></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section class="container margin_60 md-pt-0">
+<div class="main_title">
+<h3><span>Explore</span> Kotagiri Landscapes</h3>
+<h4>Get an amazing trip to Kotagiri. GoKotagiri Tourism helps you with Trip Planning, Tour Packages, Taxi, Homestay, Hotels, Trekking, Sight Seeing and Guidance.</h4>
+</div>
+<div class="row">
+<div class="col-xs-4">
+<div class="box_how">
+<div class="icon_how"><i class="fa fa-money"></i></div>
+<h4>Best price guaranteed</h4>
+</div>
+</div>
+<div class="col-xs-4">
+<div class="box_how">
+<div class="icon_how"><i class="fa fa-map-marker"></i></div>
+<h4>Expert local guidance</h4>
+</div>
+</div>
+<div class="col-xs-4">
+<div class="box_how">
+<div class="icon_how"><i class="fa fa-trophy"></i></div>
+<h4>Certificate of Excellence</h4>
+</div>
+</div>
+</div>
+</section>
+<footer>
+<div class="container">
+<div class="row">
+<div class="col-md-2 col-sm-4 col-xs-12">
+<h3>Our Community</h3>
+<ul>
+<li class="first-child"><a href="/">GoKotagiri Tourism</a></li> 
+<li><a href="/bus">GoKotagiri Buses</a></li>
+<li><a href="/logistics">GoKotagiri Cargo</a></li>
+<li><a href="/taxi">GoKotagiri Rentals</a></li>
+<li><a href="/fresh">GoKotagiri Fresh</a></li>
+<li class="last-child"><a href="/labs">GoKotagiri Labs</a></li>
+</ul>
+</div>
+<div class="col-md-2 col-sm-4 col-xs-12"> 
+<h3>Explore Kotagiri</h3>
+<ul>
+<li class="first-child"><a href="/experience">Kotagiri Trekking</a></li>
+<li><a href="/stays">Stay at Kotagiri</a></li>
+<li><a href="/taxi">Taxi at Kotagiri</a></li>
+<li><a href="/bus">Kotagiri Bus Packages</a></li>
+<li><a href="/info">Tourism Informations</a></li>
+<li class="last-child"><a href="/logistics">Speed Parcel Services</a></li>
+</ul>
+</div>
+<div class="col-md-2 col-sm-4 col-xs-12">
+<h3>Company</h3>
+<ul>
+<li class="first-child"><a href="/about">About Us</a></li>
+<li><a href="/team">Our Team</a></li>
+<li><a href="/careers">Careers</a></li>
+<li><a href="/partner">Work With Us</a></li>
+<li><a href="/on-cancellation">Cancellation</a></li>
+<li class="last-child"><a href="/contact">Contact Us</a></li>
+</ul>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12">
+<h3>Corporate Office</h3>
+<ul>
+<li class="first-child last-child"><a>GoKotagiri Pvt Ltd.<br>
+Tourism â€¢ Logistics â€¢ Cargo<br>
+GoKotagiri Tourism Lounge,<br>
+Opp. Pandian Park, Nihung post,<br>
+Ooty Highway, Kotagiri - 643217<br>
+The Nilgiris, Tamilnadu, India.</a>
+</li></ul>
+</div>
+<div class="col-md-3 col-sm-6 col-xs-12 forbooking">
+<h3>for Bookings</h3>
+<a href="tel://9943688884"><i class="fa fa-phone"></i> 99436 88884</a>
+</div>
+</div>
+<hr>
+<div class="row">
+<div class="col-sm-12" id="social_footer">
+<ul>
+<li class="first-child"><a href="https://www.facebook.com/gokotagiritourism" target="_blank"><i class="fa fa-facebook"></i></a>
+</li>
+<li><a href="https://www.instagram.com/GoKotagiriTourism/" target="_blank"><i class="fa fa-instagram"></i></a>
+</li>
+<li><a href="https://g.page/gokotagiri-tourism?share" target="_blank"><i class="fa fa-map-marker"></i></a>
+</li>
+<li class="last-child"><a href="https://www.youtube.com/channel/UC2Oi0jwSpffj2YslGg6p_YA" target="_blank"><i class="fa fa-youtube"></i></a>
+</li>
+</ul>
+</div>
+<div class="clearfix"></div>
+<div class="col-sm-12">
+<div class="footer-section-copyright text-center">
+<div class="container">
+<div class="hr"></div>
+<div class="copyright-info"> 
+<p>Friends follow each other everywhere #gokotagiri</p>
+An Initiative on behalf of Ooty Tourism Development, Tamilnadu. You may not reproduce or copy anything without our written permission!<br>
+For Business/Trade/Classifications and Tenders please mail to admin@gokotagiri.com. All rights reserved Â© 2012-2025</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</footer>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({
+google_ad_client: "ca-pub-9839803229111533",
+enable_page_level_ads: true
+});
+</script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'UA-135424401-1');
+</script>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KKFT8HW');</script>
+<script type="text/javascript">
+if (!Array.isArray(window.qbOptions)) {
+window.qbOptions = []
+}
+window.qbOptions.push({"use":"a01M4EWGWMExN9J7/eBYgZbjX6Nr3l7jA"});
+</script>
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KKFT8HW"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<div class="razorpay-container" style="z-index: 2147483647; position: fixed; top: 0px; display: none; left: 0px; height: 100%; width: 100%; max-height: 100dvh; backface-visibility: hidden; overflow-y: visible;"><style>@keyframes rzp-rot{to{transform: rotate(360deg);}}@-webkit-keyframes rzp-rot{to{-webkit-transform: rotate(360deg);}} .razorpay-container > iframe {min-height: 100%!important;}</style><div class="razorpay-backdrop" style="min-height: 100%; transition: 0.3s ease-out; position: fixed; top: 0px; left: 0px; width: 100%; height: 100%;"><span style="text-decoration: none; background: rgb(214, 68, 68); border: 1px dashed white; padding: 3px; opacity: 0; transform: rotate(45deg); transition: opacity 0.3s ease-in; font-family: lato, ubuntu, helvetica, sans-serif; color: white; position: absolute; width: 200px; text-align: center; right: -50px; top: 50px;">Test Mode</span></div><iframe allowtransparency="true" frameborder="0" width="100%" height="100%" src="https://api.razorpay.com/v1/checkout/public?traffic_env=production&amp;build=69072294339304a2a75a38e1e425461bb718e272&amp;build_v1=715e3c0a534a4e4fa59a19e1d2a3cc3daf1837e2&amp;checkout_v2=1&amp;new_session=1&amp;rzp_device_id=1.aaa48c262f56cb7f15d4939ba8045a00b683cf2c.1758532335169.88973514&amp;unified_session_id=RPLJd3CTks1G2q" class="razorpay-checkout-frame" allow="otp-credentials; payment; clipboard-write; publickey-credentials-get https://api.razorpay.com; publickey-credentials-create 'self' https://api.razorpay.com; web-share; camera *" style="opacity: 1; height: 100%; position: relative; background: none; display: block; border: 0px none transparent; margin: 0px; padding: 0px; z-index: 2;"></iframe></div>
+<style>@keyframes rzp-rot{to{transform: rotate(360deg);}}@-webkit-keyframes rzp-rot{to{-webkit-transform: rotate(360deg);}} .razorpay-container > iframe {min-height: 100%!important;}</style>
+<div class="razorpay-backdrop" style="min-height: 100%; transition: 0.3s ease-out; position: fixed; top: 0px; left: 0px; width: 100%; height: 100%;"><span style="text-decoration: none; background: rgb(214, 68, 68); border: 1px dashed white; padding: 3px; opacity: 0; transform: rotate(45deg); transition: opacity 0.3s ease-in; font-family: lato, ubuntu, helvetica, sans-serif; color: white; position: absolute; width: 200px; text-align: center; right: -50px; top: 50px;">Test Mode</span></div>
+<iframe allowtransparency="true" frameborder="0" width="100%" height="100%" src="https://api.razorpay.com/v1/checkout/public?traffic_env=production&amp;build=69072294339304a2a75a38e1e425461bb718e272&amp;build_v1=715e3c0a534a4e4fa59a19e1d2a3cc3daf1837e2&amp;checkout_v2=1&amp;new_session=1&amp;rzp_device_id=1.aaa48c262f56cb7f15d4939ba8045a00b683cf2c.1758532335169.88973514&amp;unified_session_id=RPLJd3CTks1G2q" class="razorpay-checkout-frame" allow="otp-credentials; payment; clipboard-write; publickey-credentials-get https://api.razorpay.com; publickey-credentials-create 'self' https://api.razorpay.com; web-share; camera *" style="opacity: 1; height: 100%; position: relative; background: none; display: block; border: 0px none transparent; margin: 0px; padding: 0px; z-index: 2;"></iframe>
+<script type="speculationrules">
+{"prefetch":[{"source":"document","where":{"and":[{"href_matches":"\/*"},{"not":{"href_matches":["\/wp-*.php","\/wp-admin\/*","\/wp-content\/uploads\/*","\/wp-content\/*","\/wp-content\/plugins\/*","\/wp-content\/themes\/gokotagiritourism\/*","\/*\\?(.+)"]}},{"not":{"selector_matches":"a[rel~=\"nofollow\"]"}},{"not":{"selector_matches":".no-prefetch, .no-prefetch a"}}]},"eagerness":"conservative"}]}
+</script>
+<style id="metaslider-public-inline-css" type="text/css">
+@media only screen and (max-width: 767px) { .hide-arrows-smartphone .flex-direction-nav, .hide-navigation-smartphone .flex-control-paging, .hide-navigation-smartphone .flex-control-nav, .hide-navigation-smartphone .filmstrip, .hide-slideshow-smartphone, .metaslider-hidden-content.hide-smartphone{ display: none!important; }}@media only screen and (min-width : 768px) and (max-width: 1023px) { .hide-arrows-tablet .flex-direction-nav, .hide-navigation-tablet .flex-control-paging, .hide-navigation-tablet .flex-control-nav, .hide-navigation-tablet .filmstrip, .hide-slideshow-tablet, .metaslider-hidden-content.hide-tablet{ display: none!important; }}@media only screen and (min-width : 1024px) and (max-width: 1439px) { .hide-arrows-laptop .flex-direction-nav, .hide-navigation-laptop .flex-control-paging, .hide-navigation-laptop .flex-control-nav, .hide-navigation-laptop .filmstrip, .hide-slideshow-laptop, .metaslider-hidden-content.hide-laptop{ display: none!important; }}@media only screen and (min-width : 1440px) { .hide-arrows-desktop .flex-direction-nav, .hide-navigation-desktop .flex-control-paging, .hide-navigation-desktop .flex-control-nav, .hide-navigation-desktop .filmstrip, .hide-slideshow-desktop, .metaslider-hidden-content.hide-desktop{ display: none!important; }}
+</style>
+<script type="text/javascript" id="chaty-front-end-js-extra">
+/* <![CDATA[ */
+var chaty_settings = {"ajax_url":"https:\/\/gokotagiri.com\/wp-admin\/admin-ajax.php","analytics":"0","capture_analytics":"0","token":"22dee2d1b5","chaty_widgets":[{"id":0,"identifier":0,"settings":{"cta_type":"simple-view","cta_body":"","cta_head":"","cta_head_bg_color":"","cta_head_text_color":"","show_close_button":1,"position":"right","custom_position":1,"bottom_spacing":"25","side_spacing":"25","icon_view":"vertical","default_state":"click","cta_text":"","cta_text_color":"#333333","cta_bg_color":"#ffffff","show_cta":"first_click","is_pending_mesg_enabled":"on","pending_mesg_count":"3","pending_mesg_count_color":"#ffffff","pending_mesg_count_bgcolor":"#86cd91","widget_icon":"chat-base","widget_icon_url":"","font_family":"Georgia","widget_size":"54","custom_widget_size":"54","is_google_analytics_enabled":0,"close_text":"Hide","widget_color":"#A886CD","widget_icon_color":"#ffffff","widget_rgb_color":"168,134,205","has_custom_css":0,"custom_css":"","widget_token":"072e827a46","widget_index":"","attention_effect":"spin"},"triggers":{"has_time_delay":1,"time_delay":"0","exit_intent":0,"has_display_after_page_scroll":0,"display_after_page_scroll":"0","auto_hide_widget":0,"hide_after":0,"show_on_pages_rules":[],"time_diff":0,"has_date_scheduling_rules":0,"date_scheduling_rules":{"start_date_time":"","end_date_time":""},"date_scheduling_rules_timezone":0,"day_hours_scheduling_rules_timezone":0,"has_day_hours_scheduling_rules":[],"day_hours_scheduling_rules":[],"day_time_diff":0,"show_on_direct_visit":0,"show_on_referrer_social_network":0,"show_on_referrer_search_engines":0,"show_on_referrer_google_ads":0,"show_on_referrer_urls":[],"has_show_on_specific_referrer_urls":0,"has_traffic_source":0,"has_countries":0,"countries":[],"has_target_rules":0},"channels":[{"channel":"Whatsapp","value":"919943688884","hover_text":"","chatway_position":"","svg_icon":"<svg width=\"39\" height=\"39\" viewBox=\"0 0 39 39\" fill=\"none\" xmlns=\"http:\/\/www.w3.org\/2000\/svg\"><circle class=\"color-element\" cx=\"19.4395\" cy=\"19.4395\" r=\"19.4395\" fill=\"#49E670\"\/><path d=\"M12.9821 10.1115C12.7029 10.7767 11.5862 11.442 10.7486 11.575C10.1902 11.7081 9.35269 11.8411 6.84003 10.7767C3.48981 9.44628 1.39593 6.25317 1.25634 6.12012C1.11674 5.85403 2.13001e-06 4.39053 2.13001e-06 2.92702C2.13001e-06 1.46351 0.83755 0.665231 1.11673 0.399139C1.39592 0.133046 1.8147 1.01506e-06 2.23348 1.01506e-06C2.37307 1.01506e-06 2.51267 1.01506e-06 2.65226 1.01506e-06C2.93144 1.01506e-06 3.21063 -2.02219e-06 3.35022 0.532183C3.62941 1.19741 4.32736 2.66092 4.32736 2.79397C4.46696 2.92702 4.46696 3.19311 4.32736 3.32616C4.18777 3.59225 4.18777 3.59224 3.90858 3.85834C3.76899 3.99138 3.6294 4.12443 3.48981 4.39052C3.35022 4.52357 3.21063 4.78966 3.35022 5.05576C3.48981 5.32185 4.18777 6.38622 5.16491 7.18449C6.42125 8.24886 7.39839 8.51496 7.81717 8.78105C8.09636 8.91409 8.37554 8.9141 8.65472 8.648C8.93391 8.38191 9.21309 7.98277 9.49228 7.58363C9.77146 7.31754 10.0507 7.1845 10.3298 7.31754C10.609 7.45059 12.2841 8.11582 12.5633 8.38191C12.8425 8.51496 13.1217 8.648 13.1217 8.78105C13.1217 8.78105 13.1217 9.44628 12.9821 10.1115Z\" transform=\"translate(12.9597 12.9597)\" fill=\"#FAFAFA\"\/><path d=\"M0.196998 23.295L0.131434 23.4862L0.323216 23.4223L5.52771 21.6875C7.4273 22.8471 9.47325 23.4274 11.6637 23.4274C18.134 23.4274 23.4274 18.134 23.4274 11.6637C23.4274 5.19344 18.134 -0.1 11.6637 -0.1C5.19344 -0.1 -0.1 5.19344 -0.1 11.6637C-0.1 13.9996 0.624492 16.3352 1.93021 18.2398L0.196998 23.295ZM5.87658 19.8847L5.84025 19.8665L5.80154 19.8788L2.78138 20.8398L3.73978 17.9646L3.75932 17.906L3.71562 17.8623L3.43104 17.5777C2.27704 15.8437 1.55796 13.8245 1.55796 11.6637C1.55796 6.03288 6.03288 1.55796 11.6637 1.55796C17.2945 1.55796 21.7695 6.03288 21.7695 11.6637C21.7695 17.2945 17.2945 21.7695 11.6637 21.7695C9.64222 21.7695 7.76778 21.1921 6.18227 20.039L6.17557 20.0342L6.16817 20.0305L5.87658 19.8847Z\" transform=\"translate(7.7758 7.77582)\" fill=\"white\" stroke=\"white\" stroke-width=\"0.2\"\/><\/svg>","is_desktop":1,"is_mobile":1,"icon_color":"#49E670","icon_rgb_color":"73,230,112","channel_type":"Whatsapp","custom_image_url":"","order":"","pre_set_message":"","is_use_web_version":"1","is_open_new_tab":"1","is_default_open":"0","has_welcome_message":"0","emoji_picker":"1","input_placeholder":"Write your message...","chat_welcome_message":"<p>Hey There!<\/p>","wp_popup_headline":"Let&#039;s chat on WhatsApp","wp_popup_nickname":"","wp_popup_profile":"","wp_popup_head_bg_color":"#4AA485","qr_code_image_url":"","mail_subject":"","channel_account_type":"personal","contact_form_settings":[],"contact_fields":[],"url":"https:\/\/web.whatsapp.com\/send?phone=919943688884","mobile_target":"","desktop_target":"_blank","target":"_blank","is_agent":0,"agent_data":[],"header_text":"","header_sub_text":"","header_bg_color":"","header_text_color":"","widget_token":"072e827a46","widget_index":"","click_event":"","viber_url":""}]}],"data_analytics_settings":"off","lang":{"whatsapp_label":"WhatsApp Message","hide_whatsapp_form":"Hide WhatsApp Form","emoji_picker":"Show Emojis"},"has_chatway":""};
+/* ]]> */
+</script>
+<script type="text/javascript" id="metaslider-flex-slider-js-after">
+/* <![CDATA[ */
+var metaslider_2309 = function($) {$('#metaslider_2309').addClass('flexslider');
+$('#metaslider_2309').flexslider({ 
+slideshowSpeed:4000,
+animation:"fade",
+controlNav:false,
+directionNav:false,
+pauseOnHover:false,
+direction:"horizontal",
+reverse:false,
+keyboard:true,
+touch:true,
+animationSpeed:600,
+prevText:"Previous",
+nextText:"Next",
+smoothHeight:false,
+fadeFirstSlide:false,
+slideshow:true,
+pausePlay:false,
+showPlayText:false,
+playText:false,
+pauseText:false,
+start: function(slider) {
+// Function to disable focusable elements in aria-hidden slides
+function disableAriaHiddenFocusableElements() {
+var slider_ = $('#metaslider_2309');
+// Disable focusable elements in slides with aria-hidden='true'
+slider_.find('.slides li[aria-hidden="true"] a, .slides li[aria-hidden="true"] button, .slides li[aria-hidden="true"] input, .slides li[aria-hidden="true"] select, .slides li[aria-hidden="true"] textarea, .slides li[aria-hidden="true"] [tabindex]:not([tabindex="-1"])').attr('tabindex', '-1');
+// Disable focusable elements in cloned slides (these should never be focusable)
+slider_.find('.slides li.clone a, .slides li.clone button, .slides li.clone input, .slides li.clone select, .slides li.clone textarea, .slides li.clone [tabindex]:not([tabindex="-1"])').attr('tabindex', '-1');
+}
+// Initial setup
+disableAriaHiddenFocusableElements();
+// Observer for aria-hidden and clone changes
+if (typeof MutationObserver !== 'undefined') {
+var ariaObserver = new MutationObserver(function(mutations) {
+var shouldUpdate = false;
+mutations.forEach(function(mutation) {
+if (mutation.type === 'attributes' && mutation.attributeName === 'aria-hidden') {
+shouldUpdate = true;
+}
+if (mutation.type === 'childList') {
+// Check if cloned slides were added/removed
+for (var i = 0; i < mutation.addedNodes.length; i++) {
+if (mutation.addedNodes[i].nodeType === 1 && 
+(mutation.addedNodes[i].classList.contains('clone') || 
+mutation.addedNodes[i].querySelector && mutation.addedNodes[i].querySelector('.clone'))) {
+shouldUpdate = true;
+break;
+}
+}
+}
+});
+if (shouldUpdate) {
+setTimeout(disableAriaHiddenFocusableElements, 10);
+}
+});
+var targetNode = $('#metaslider_2309')[0];
+if (targetNode) {
+ariaObserver.observe(targetNode, { 
+attributes: true, 
+attributeFilter: ['aria-hidden'],
+childList: true,
+subtree: true
+});
+}
+}
+},
+after: function(slider) {
+// Re-disable focusable elements after slide transitions
+var slider_ = $('#metaslider_2309');
+// Disable focusable elements in slides with aria-hidden='true'
+slider_.find('.slides li[aria-hidden="true"] a, .slides li[aria-hidden="true"] button, .slides li[aria-hidden="true"] input, .slides li[aria-hidden="true"] select, .slides li[aria-hidden="true"] textarea, .slides li[aria-hidden="true"] [tabindex]:not([tabindex="-1"])').attr('tabindex', '-1');
+// Disable focusable elements in cloned slides
+slider_.find('.slides li.clone a, .slides li.clone button, .slides li.clone input, .slides li.clone select, .slides li.clone textarea, .slides li.clone [tabindex]:not([tabindex="-1"])').attr('tabindex', '-1');
+}
+});
+$(document).trigger('metaslider/initialized', '#metaslider_2309');
+};
+var timer_metaslider_2309 = function() {
+var slider = !window.jQuery ? window.setTimeout(timer_metaslider_2309, 100) : !jQuery.isReady ? window.setTimeout(timer_metaslider_2309, 1) : metaslider_2309(window.jQuery);
+};
+timer_metaslider_2309();
+/* ]]> */
+</script>
+<script type="text/javascript" id="metaslider-script-js-extra">
+/* <![CDATA[ */
+var wpData = {"baseUrl":"https:\/\/gokotagiri.com"};
+/* ]]> */
+</script>
+<svg width="39" height="39" viewBox="0 0 39 39" class="hide-cht-svg-bg" fill="none" xmlns="http://www.w3.org/2000/svg"><defs> <linearGradient id="linear-gradient" x1="0.892" y1="0.192" x2="0.128" y2="0.85" gradientUnits="objectBoundingBox"> <stop offset="0" stop-color="#4a64d5"></stop> <stop offset="0.322" stop-color="#9737bd"></stop> <stop offset="0.636" stop-color="#f15540"></stop> <stop offset="1" stop-color="#fecc69"></stop> </linearGradient> <linearGradient id="linear-gradient-insta-dm" x1="0.892" y1="0.192" x2="0.128" y2="0.85" gradientUnits="objectBoundingBox"> <stop offset="0" stop-color="#4A64D5"></stop> <stop offset="0.322" stop-color="#9737BD"></stop> <stop offset="0.636" stop-color="#F15540"></stop> <stop offset="1" stop-color="#FECC69"></stop> </linearGradient></defs></svg>
+<div style="display: none" class="chaty chaty-id-0 chaty-widget-0 chaty-key-0 first_click active" id="chaty-widget-0" data-key="0" data-id="0" data-identifier="0" data-nonce="072e827a46" data-animation="spin"><div class="chaty-widget right-position has-single"><div class="chaty-channels"><div class="chaty-channel-list" id="csaas-channels-0"></div><div class="chaty-i-trigger csaas-widget-trigger  single-channel"><div class="chaty-channel Whatsapp-channel-link single active chaty-tooltip pos-left has-on-hover" id="Whatsapp-0-channel" data-id="Whatsapp-0" data-widget="0" data-channel="Whatsapp"><a href="https://web.whatsapp.com/send?phone=919943688884&amp;text=" target="_blank" rel="nofollow noopener" aria-label="Whatsapp" class="Whatsapp-channel chaty-link chaty-whatsapp-channel pos-left has-on-hover" data-form="chaty-form-0-Whatsapp" data-hover="" data-text=""><span class="chaty-icon channel-icon-Whatsapp"><span class="chaty-svg chaty-animation-spin"><svg width="39" height="39" viewBox="0 0 39 39" fill="none" xmlns="http://www.w3.org/2000/svg"><circle class="color-element" cx="19.4395" cy="19.4395" r="19.4395" fill="#49E670"></circle><path d="M12.9821 10.1115C12.7029 10.7767 11.5862 11.442 10.7486 11.575C10.1902 11.7081 9.35269 11.8411 6.84003 10.7767C3.48981 9.44628 1.39593 6.25317 1.25634 6.12012C1.11674 5.85403 2.13001e-06 4.39053 2.13001e-06 2.92702C2.13001e-06 1.46351 0.83755 0.665231 1.11673 0.399139C1.39592 0.133046 1.8147 1.01506e-06 2.23348 1.01506e-06C2.37307 1.01506e-06 2.51267 1.01506e-06 2.65226 1.01506e-06C2.93144 1.01506e-06 3.21063 -2.02219e-06 3.35022 0.532183C3.62941 1.19741 4.32736 2.66092 4.32736 2.79397C4.46696 2.92702 4.46696 3.19311 4.32736 3.32616C4.18777 3.59225 4.18777 3.59224 3.90858 3.85834C3.76899 3.99138 3.6294 4.12443 3.48981 4.39052C3.35022 4.52357 3.21063 4.78966 3.35022 5.05576C3.48981 5.32185 4.18777 6.38622 5.16491 7.18449C6.42125 8.24886 7.39839 8.51496 7.81717 8.78105C8.09636 8.91409 8.37554 8.9141 8.65472 8.648C8.93391 8.38191 9.21309 7.98277 9.49228 7.58363C9.77146 7.31754 10.0507 7.1845 10.3298 7.31754C10.609 7.45059 12.2841 8.11582 12.5633 8.38191C12.8425 8.51496 13.1217 8.648 13.1217 8.78105C13.1217 8.78105 13.1217 9.44628 12.9821 10.1115Z" transform="translate(12.9597 12.9597)" fill="#FAFAFA"></path><path d="M0.196998 23.295L0.131434 23.4862L0.323216 23.4223L5.52771 21.6875C7.4273 22.8471 9.47325 23.4274 11.6637 23.4274C18.134 23.4274 23.4274 18.134 23.4274 11.6637C23.4274 5.19344 18.134 -0.1 11.6637 -0.1C5.19344 -0.1 -0.1 5.19344 -0.1 11.6637C-0.1 13.9996 0.624492 16.3352 1.93021 18.2398L0.196998 23.295ZM5.87658 19.8847L5.84025 19.8665L5.80154 19.8788L2.78138 20.8398L3.73978 17.9646L3.75932 17.906L3.71562 17.8623L3.43104 17.5777C2.27704 15.8437 1.55796 13.8245 1.55796 11.6637C1.55796 6.03288 6.03288 1.55796 11.6637 1.55796C17.2945 1.55796 21.7695 6.03288 21.7695 11.6637C21.7695 17.2945 17.2945 21.7695 11.6637 21.7695C9.64222 21.7695 7.76778 21.1921 6.18227 20.039L6.17557 20.0342L6.16817 20.0305L5.87658 19.8847Z" transform="translate(7.7758 7.77582)" fill="white" stroke="white" stroke-width="0.2"></path></svg></span></span><span class="on-hover-text"></span></a><span class="on-hover-text"></span><span class="ch-pending-msg">3</span></div><div class="chaty-channel chaty-cta-close chaty-tooltip pos-left" data-hover="Hide"><div class="chaty-cta-button"><button type="button"><span class="chaty-svg chaty-animation-spin"><svg viewBox="0 0 52 52" fill="none" xmlns="http://www.w3.org/2000/svg"><ellipse cx="26" cy="26" rx="26" ry="26" fill="#A886CD"></ellipse><rect width="27.1433" height="3.89857" rx="1.94928" transform="translate(18.35 15.6599) scale(0.998038 1.00196) rotate(45)" fill="#ffffff"></rect><rect width="27.1433" height="3.89857" rx="1.94928" transform="translate(37.5056 18.422) scale(0.998038 1.00196) rotate(135)" fill="#ffffff"></rect></svg></span><span class="sr-only">Hide chaty</span></button></div><span class="ch-pending-msg">3</span></div></div></div></div></div>
+</body>
+</html>
